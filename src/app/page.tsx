@@ -1,18 +1,18 @@
 // src/app/page.tsx
-import Head from "next/head";
 import { setNetworkId, NetworkId } from "@midnight-ntwrk/zswap";
 import ConnectWalletButton from "../components/ConnectWalletButton";
+import { Metadata } from "next";
 
 setNetworkId(NetworkId.DevNet);
+
+export const metadata: Metadata = {
+  title: "My Midnight App",
+  description: "A simple Next.js app with Midnight wallet integration",
+};
 
 export default function Home() {
   return (
     <div>
-      <Head>
-        <title>My Midnight App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <main>
         <h1>Welcome to My Midnight App</h1>
         <ConnectWalletButton />
